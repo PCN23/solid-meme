@@ -34,7 +34,10 @@ function resetStats() {
 }
 
 form.addEventListener('submit', (e) => {
+    e.preventDefault();
     // Step 1 - add code to track each submission to the stats
+    const newPlayer = FormData(form);
+    const playerPoints = 
     // Create an object to "model" you statistic like the following:
     // { player: 'Bob', points: 2 }
     // Hint -- create the object from the form, push it onto the stats array, then call renderStats
