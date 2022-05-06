@@ -42,11 +42,11 @@ form.addEventListener('submit', (e) => {
     // { player: 'Bob', points: 2 }
     const item = {
         player: data.get('player'),
-        points: item.get('points'),
+        points: Number(data.get('points')),
     };
-    form.reset();
     stats.push(item);
-    // Hint -- create the object from the form, push it onto the stats array, then call renderStats
+    form.reset();
+     // Hint -- create the object from the form, push it onto the stats array, then call renderStats
     renderStats();
 });
 
