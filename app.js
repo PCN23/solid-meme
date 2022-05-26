@@ -9,7 +9,7 @@ const save = document.getElementById('save-game');
 
 let stats = [];
 let games = [];
-let totalPoints =0;
+let totalPoints = 0;
 
 // IMPURE RENDER FUNCTIONS
 // YOUR CODE MUST CALL THESE FUNCTIONS
@@ -36,18 +36,15 @@ function resetStats() {
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    // Step 1 - add code to track each submission to the stats
     const data = new FormData(form);
- // Create an object to "model" you statistic like the following:
-    // { player: 'Bob', points: 2 }
     const item = {
         player: data.get('player'),
         points: Number(data.get('points')),
     };
     stats.push(item);
     form.reset();
-     // Hint -- create the object from the form, push it onto the stats array, then call renderStats
     renderStats();
+    // Hint -- create the object from the form, push it onto the stats array, then call renderStats
 });
 
 remove.addEventListener('click', () => {
@@ -64,11 +61,9 @@ save.addEventListener('click', () => {
     for (const stat of stats){
         totalPoints += stat.points;
     }
-    // Create a new object with the game number and the total points
-    // { number: games.length + 1, totalPoints: totalPoints }
-    games.push ({ number: games.length +1, totalPoints });
-    // Push the new object onto the games array then call renderGames
+    games.push ({ number: games.length + 1, totalPoints });
     renderGames();
-    // reset the stats with resetStats
     resetStats();
+    
 });
+//comment

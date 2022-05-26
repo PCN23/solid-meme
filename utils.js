@@ -1,6 +1,6 @@
-export function renderStat(item) {
+export function renderStat(Number) {
     const li = document.createElement('li');
-    li.textContent = `${item.player} (${item.points} Points)`;
+    li.textContent = `${Number.player} (${Number.points} Points)`;
     return li;
 }
 
